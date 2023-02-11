@@ -178,7 +178,7 @@ export default function Home() {
           <form action="" onSubmit={(e) => getData(e)} className="flex flex-col gap-2 md:flex-row">
             <input
               type="text"
-              className="h-[48px] w-[250px] rounded-md border-[1px] border-solid border-[#eaeaea] px-3 transition-colors focus:border-black focus:outline-none"
+              className="h-[48px] w-[250px] rounded-md border-[1px] border-solid border-[#eaeaea] px-3 outline-none transition-colors focus:border-black focus:outline-1"
               placeholder="Enter a Twitter username"
               value={user}
               onChange={(e) => setUser(e.target.value)}
@@ -190,7 +190,7 @@ export default function Home() {
             <input
               type="text"
               value={keywords}
-              className="h-[48px] w-[250px] rounded-md border-[1px] border-solid border-[#eaeaea] px-3 transition-colors focus:border-black focus:outline-none"
+              className="h-[48px] w-[250px] rounded-md border-[1px] border-solid border-[#eaeaea] px-3 outline-none transition-colors focus:border-black focus:outline-1"
               placeholder="Enter keywords"
               onChange={(e) => setKeywords(e.target.value)}
               spellCheck="false"
@@ -209,7 +209,7 @@ export default function Home() {
                       type="checkbox"
                       onChange={(e) => setExactWords(e.target.checked)}
                       id="exactWords"
-                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white transition-colors checked:border-black checked:bg-black focus:outline-1"
+                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus:border-black checked:focus:border-sky-500"
                     />
                     <span className="absolute flex items-center justify-center">
                       <Check width={14} height={14} color="white" />
@@ -228,7 +228,7 @@ export default function Home() {
                       onChange={(e) => setAllKeywords(e.target.checked)}
                       checked={allKeywords}
                       id="allKeywords"
-                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white transition-colors checked:border-black checked:bg-black focus:outline-1"
+                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus:border-black checked:focus:border-gray-400"
                     />
                     <span className="absolute flex items-center justify-center">
                       <Check width={14} height={14} color="white" />
