@@ -82,20 +82,6 @@ export default function Home() {
       setUser(newUser);
     }
 
-    if (keywords === "") {
-      setFinished(true);
-      setTitle("Invalid Keywords");
-      setDescription("Please enter a valid keyword.");
-      setOpenToast(true);
-      if (openToast) {
-        setOpenToast(false);
-        setTimeout(() => {
-          setOpenToast(true);
-        }, 350);
-      }
-      return;
-    }
-
     let slicedKeywords = handleInput(keywords);
     keywords.includes(",")
       ? slicedKeywords.split(",").forEach((keyword) => newKeywords.push(keyword))
@@ -111,6 +97,17 @@ export default function Home() {
       setDescription("Please enter a valid user.");
       setOpenToast(true);
       setUser("");
+      if (openToast) {
+        setOpenToast(false);
+        setTimeout(() => {
+          setOpenToast(true);
+        }, 350);
+      }
+    } else if (keywords === "") {
+      setFinished(true);
+      setTitle("Invalid Keywords");
+      setDescription("Please enter a valid keyword.");
+      setOpenToast(true);
       if (openToast) {
         setOpenToast(false);
         setTimeout(() => {
@@ -250,7 +247,7 @@ export default function Home() {
             </div>
           </form>
           <div className="flex flex-col">
-            <h2 className="my-4 text-xl font-bold">
+            <h2 className="my-4 break-words text-center text-xl font-bold">
               {results ? `Showing ${results} ${results > 1 ? "results" : "result"} for ` : null}
               {results ? (
                 <a
