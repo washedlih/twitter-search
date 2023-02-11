@@ -240,7 +240,7 @@ export default function Home() {
               <button
                 type="submit"
                 className={`flex h-[48px] ${
-                  finished ? `w-[100px] justify-center` : `w-[130px] gap-2 px-2`
+                  finished ? `w-[100px] justify-center` : `w-[130px] gap-1 px-2`
                 } items-center rounded-md border-[1px] border-solid border-black bg-black px-3 text-white transition hover:bg-white hover:text-black focus:outline-1 focus:outline-gray-400`}
                 onClick={() => setFinished(false)}
               >
