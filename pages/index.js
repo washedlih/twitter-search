@@ -5,12 +5,12 @@ import { Check, Loader2 } from "lucide-react";
 import Alert from "../components/Alert";
 
 export default function Home() {
-  const [user, setUser] = useState("washedlih");
+  const [user, setUser] = useState("");
   const [newUser, setNewUser] = useState("");
   const [data, setData] = useState([]);
   const [finished, setFinished] = useState(true);
   const [results, setResults] = useState();
-  const [keywords, setKeywords] = useState("vercel,design");
+  const [keywords, setKeywords] = useState("");
   const [exactWords, setExactWords] = useState(false);
   const [allKeywords, setAllKeywords] = useState(true);
   const [openToast, setOpenToast] = useState(false);
@@ -121,8 +121,6 @@ export default function Home() {
       setTitle("Rate Limited");
       setDescription("Please try again later.");
       setOpenToast(true);
-      setUser("washedlih");
-      setKeywords("vercel,design");
       if (openToast) {
         setOpenToast(false);
         setTimeout(() => {
