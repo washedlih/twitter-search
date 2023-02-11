@@ -165,7 +165,7 @@ export default function Home() {
     <>
       <Head>
         <title>Twitter Search Following</title>
-        <meta name="description" content="Search users a user is following" />
+        <meta name="description" content="Search who a user is following" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
