@@ -2,6 +2,9 @@ import Image from "next/image";
 import React from "react";
 
 const Table = ({ data }) => {
+  data.sort((a, b) => {
+    return b.public_metrics.followers_count - a.public_metrics.followers_count;
+  });
   return (
     <div className="flex flex-col">
       <table className="mb-10 border-t">
@@ -44,9 +47,6 @@ const Table = ({ data }) => {
             </tr>
           ) : (
             data.map((item) => {
-              data.sort((a, b) => {
-                return b.public_metrics.followers_count - a.public_metrics.followers_count;
-              });
               return (
                 <tr key={item.id} className="border-b hover:bg-gray-100">
                   <td className="flex gap-4 px-6 py-4 text-base text-gray-900 md:text-lg">
@@ -100,7 +100,6 @@ const Table = ({ data }) => {
               );
             })
           )}
-          {console.log(data)}
         </tbody>
       </table>
     </div>
