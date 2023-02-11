@@ -110,6 +110,7 @@ export default function Home() {
       setTitle("User not found");
       setDescription("Please enter a valid user.");
       setOpenToast(true);
+      setUser("");
       if (openToast) {
         setOpenToast(false);
         setTimeout(() => {
@@ -121,8 +122,6 @@ export default function Home() {
       setTitle("Rate Limited");
       setDescription("Please try again later.");
       setOpenToast(true);
-      setUser("washedlih");
-      setKeywords("vercel,design");
       if (openToast) {
         setOpenToast(false);
         setTimeout(() => {
@@ -130,7 +129,6 @@ export default function Home() {
         }, 350);
       }
     } else {
-      console.log(newKeywords);
       while (data.data.meta.next_token) {
         const response = await fetch(`/api/getData?id=${id}&token=${data.data.meta.next_token}`);
         const data2 = await response.json();
