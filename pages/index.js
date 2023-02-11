@@ -10,7 +10,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [finished, setFinished] = useState(true);
   const [results, setResults] = useState();
-  const [keywords, setKeywords] = useState("vercel,design");
+  const [keywords, setKeywords] = useState("web,design");
   const [exactWords, setExactWords] = useState(false);
   const [allKeywords, setAllKeywords] = useState(true);
   const [openToast, setOpenToast] = useState(false);
@@ -251,10 +251,10 @@ export default function Home() {
           </form>
           <div className="flex flex-col">
             <h2 className="my-4 text-xl font-bold">
-              {results ? `Showing ${results} ${results > 1 ? "Results" : "Result"} for ` : null}
+              {results ? `Showing ${results} ${results > 1 ? "results" : "result"} for ` : null}
               {results ? (
                 <a
-                  className="text-sky-500 hover:opacity-60"
+                  className="bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text text-transparent hover:opacity-70"
                   href={`https://twitter.com/${user}`}
                   target="_blank"
                   rel="noopener noreferrer"
