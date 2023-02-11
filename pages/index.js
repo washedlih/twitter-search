@@ -173,7 +173,7 @@ export default function Home() {
         <Alert open={openToast} setOpen={setOpenToast} title={title} description={description} />
         <div className="flex flex-col items-center justify-center">
           <h1 className="mt-10 mb-4 bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text font-sfpro text-2xl font-bold text-transparent md:text-4xl">
-            Who would you like to search?
+            Search who a user is following
           </h1>
           <form action="" onSubmit={(e) => getData(e)} className="flex flex-col gap-2 md:flex-row">
             <input
