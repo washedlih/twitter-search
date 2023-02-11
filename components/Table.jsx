@@ -100,6 +100,7 @@ const Table = ({ data }) => {
               );
             })
           )}
+          {console.log(data)}
         </tbody>
       </table>
     </div>
