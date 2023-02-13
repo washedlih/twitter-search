@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRef, useState } from "react";
 import Table from "../components/Table";
-import { Check, Loader2 } from "lucide-react";
+import { Check, Loader2, Twitter } from "lucide-react";
 import Alert from "../components/Alert";
 
 export default function Home() {
@@ -169,7 +169,7 @@ export default function Home() {
       <main>
         <Alert open={openToast} setOpen={setOpenToast} title={title} description={description} />
         <div className="flex flex-col items-center justify-center">
-          <h1 className="mt-10 mb-4 bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text font-sfpro text-2xl font-bold text-transparent md:text-4xl">
+          <h1 className="mt-10 mb-4 flex bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text font-sfpro text-2xl font-bold tracking-[-0.04em] text-transparent drop-shadow-sm md:text-4xl md:tracking-normal">
             Search who a user is following
           </h1>
           <form action="" onSubmit={(e) => getData(e)} className="flex flex-col gap-2 md:flex-row">
