@@ -238,10 +238,12 @@ export default function Home() {
                 type="submit"
                 className={`flex h-[48px] ${
                   finished ? `w-[100px] justify-center` : `w-[130px] gap-1 px-2`
-                } items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black focus:outline-2 focus:outline-black hover:focus:outline-none`}
+                } group items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black hover:focus:outline-none focus-visible:outline-2 focus-visible:outline-black`}
                 onClick={() => setFinished(false)}
               >
-                {finished ? null : <Loader2 size={20} className="animate-spin hover:text-black" />}
+                {finished ? null : (
+                  <Loader2 size={20} className="animate-spin group-hover:text-black" />
+                )}
                 {finished ? "Search" : "Searching..."}
               </button>
             </div>
