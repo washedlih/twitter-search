@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRef, useState } from "react";
 import Table from "../components/Table";
-import { Check, Loader2 } from "lucide-react";
+import { Check, Loader2, Twitter } from "lucide-react";
 import Alert from "../components/Alert";
 
 export default function Home() {
