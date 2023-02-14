@@ -6,12 +6,12 @@ const Table = ({ data }) => {
     return b.public_metrics.followers_count - a.public_metrics.followers_count;
   });
   return (
-    <div className="flex flex-col">
-      <table className="mb-10 border-t">
+    <div className="flex flex-col pb-[2.5em]">
+      <table className="mb-10">
         <tbody>
           {data.map((item) => {
             return (
-              <tr key={item.id} className="border-b hover:bg-gray-100">
+              <tr key={item.id} className="border-t hover:bg-gray-100">
                 <td className="flex gap-4 px-6 py-4 text-base text-gray-900 md:text-lg">
                   {item.profile_image_url && (
                     <a

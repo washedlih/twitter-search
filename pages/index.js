@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { useRef, useState } from "react";
 import Table from "../components/Table";
-import { Check, Loader2, Twitter } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import Alert from "../components/Alert";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [user, setUser] = useState("washedlih");
@@ -168,7 +169,7 @@ export default function Home() {
       </Head>
       <main>
         <Alert open={openToast} setOpen={setOpenToast} title={title} description={description} />
-        <div className="flex flex-col items-center justify-center">
+        <div className="relative flex min-h-screen flex-col items-center mb-3 sm:mb-0">
           <h1 className="mt-10 mb-4 bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text font-sfpro text-2xl font-bold tracking-[-0.04em] text-transparent drop-shadow-sm md:text-4xl md:tracking-normal">
             Search who a user is following
           </h1>
@@ -265,6 +266,7 @@ export default function Home() {
             </h2>
           </div>
           <Table data={data} />
+          <Footer />
         </div>
       </main>
     </>
