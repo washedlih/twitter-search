@@ -169,7 +169,7 @@ export default function Home() {
       </Head>
       <main>
         <Alert open={openToast} setOpen={setOpenToast} title={title} description={description} />
-        <div className="relative flex min-h-screen flex-col items-center mb-3 sm:mb-0">
+        <div className="relative mb-2 flex min-h-[100svh] flex-col items-center sm:mb-0">
           <h1 className="mt-10 mb-4 bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text font-sfpro text-2xl font-bold tracking-[-0.04em] text-transparent drop-shadow-sm md:text-4xl md:tracking-normal">
             Search who a user is following
           </h1>
@@ -254,11 +254,10 @@ export default function Home() {
               {results ? `Showing ${results} ${results > 1 ? "results" : "result"} for ` : null}
               {results ? (
                 <a
-                  className="bg-gradient-to-r from-[#050586] to-[#41B3FF] bg-clip-text text-transparent hover:opacity-70"
+                  className="text-blue-600 opacity-70 hover:underline hover:decoration-blue-600/30 hover:underline-offset-2 hover:opacity-100"
                   href={`https://twitter.com/${user}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={`https://twitter.com/${user}`}
                 >
                   {newUser}
                 </a>

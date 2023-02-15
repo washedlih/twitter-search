@@ -2,12 +2,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 mb-4 flex h-16 w-full max-w-[374px] flex-col items-center justify-between gap-2 border-t-[1px] px-3 py-4 sm:mb-0 sm:h-20 sm:max-w-6xl sm:flex-row sm:px-6">
+    <footer className="absolute bottom-0 flex w-full max-w-[374px] flex-col items-center justify-between gap-2 border-t-[1px] px-3 py-4 sm:mb-0 sm:h-20 sm:max-w-6xl sm:flex-row sm:px-6">
       <div className="text-slate-800">
         Built by{" "}
         <a
-          href="https://twitter.com/washedlih"
-          className="font-bold hover:text-sky-500 hover:underline"
+          href="https://www.washedlih.com/"
+          className="font-bold text-blue-600 opacity-70 hover:underline hover:decoration-blue-600/30 hover:underline-offset-2 hover:opacity-100"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           washedlih
         </a>

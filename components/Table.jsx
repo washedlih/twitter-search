@@ -6,7 +6,7 @@ const Table = ({ data }) => {
     return b.public_metrics.followers_count - a.public_metrics.followers_count;
   });
   return (
-    <div className="flex flex-col pb-[2.5em]">
+    <div className="flex flex-col pb-[3em]">
       <table className="mb-10">
         <tbody>
           {data.map((item) => {
@@ -24,7 +24,6 @@ const Table = ({ data }) => {
                         className="rounded-full shadow-md"
                         src={item.profile_image_url.replace("_normal", "_400x400")}
                         alt={item.username}
-                        title={`https://twitter.com/${item.username}`}
                         width={90}
                         height={90}
                       />
