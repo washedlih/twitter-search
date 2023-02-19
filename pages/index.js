@@ -200,7 +200,7 @@ export default function Home() {
               <div className="flex flex-col items-start">
                 <label
                   htmlFor="exactWords"
-                  className=" flex cursor-pointer select-none items-center justify-center"
+                  className="flex cursor-pointer select-none items-center justify-center"
                 >
                   <span className="relative mr-2 flex items-center justify-center">
                     <input
@@ -239,7 +239,7 @@ export default function Home() {
                 type="submit"
                 className={`flex h-[48px] ${
                   finished ? `w-[100px] justify-center` : `w-[130px] gap-1 px-2`
-                } group items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black hover:focus:outline-none focus-visible:outline-2 focus-visible:outline-black`}
+                } group select-none items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black hover:focus:outline-none focus-visible:outline-2 focus-visible:outline-black`}
                 onClick={() => setFinished(false)}
               >
                 {finished ? null : (
