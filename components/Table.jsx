@@ -11,8 +11,8 @@ const Table = ({ data }) => {
         <tbody>
           {data.map((item) => {
             return (
-              <tr key={item.id} className="border-t hover:bg-gray-100">
-                <td className="flex gap-4 px-6 py-4 text-base text-gray-900 md:text-lg">
+              <tr key={item.id} className="border-t odd:bg-white even:bg-slate-50">
+                <td className="flex gap-4 px-6 py-4 text-base text-gray-900 md:text-lg ">
                   {item.profile_image_url && (
                     <a
                       href={`https://twitter.com/${item.username}`}
