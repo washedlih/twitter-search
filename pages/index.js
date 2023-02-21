@@ -60,6 +60,9 @@ export default function Home() {
       newUser = user.split("?")[0].split("/").pop();
     } else if (user.includes("/")) {
       newUser = user.split("/").pop();
+      else if (user.includes("@")){
+      newUser = user.split("@").pop();
+      }
     } else {
       newUser = user;
     } // handles different types of twitter urls
