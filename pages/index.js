@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRef, useState } from "react";
-import Table from "../components/Table";
+import Result from "../components/Result";
 import { Check, Loader2 } from "lucide-react";
 import Alert from "../components/Alert";
 import Footer from "@/components/Footer";
@@ -20,7 +20,13 @@ export default function Home() {
   const inputRef = useRef();
 
   const hasKeywords = (item, keywords, exactWords) => {
-    let fields = [item.description, item.username, item.name];
+    let fields = [
+      item.description,
+      item.username,
+      item.name,
+      item.entities?.url?.urls?.[0]?.expanded_url,
+    ].filter(Boolean);
+
     exactWords
       ? (fields = fields.map((field) => field.toLowerCase().split(" ")))
       : (fields = fields.map((field) => field.toLowerCase()));
@@ -60,7 +66,7 @@ export default function Home() {
       newUser = user.split("?")[0].split("/").pop();
     } else if (user.includes("/")) {
       newUser = user.split("/").pop();
-    } else if (user.includes("@")){
+    } else if (user.includes("@")) {
       newUser = user.split("@")[1];
     } else {
       newUser = user;
@@ -178,7 +184,7 @@ export default function Home() {
           <form action="" onSubmit={(e) => getData(e)} className="flex flex-col gap-2 md:flex-row">
             <input
               type="text"
-              className="h-[48px] w-[250px] rounded-md border border-solid border-[#eaeaea] px-3 outline-none transition-colors focus:border-black focus:outline-1"
+              className="h-[48px] w-[250px] rounded-md border border-solid border-gray-300 px-3 outline-none transition-colors focus:border-black focus:outline-1"
               placeholder="Enter a Twitter username"
               value={user}
               onChange={(e) => setUser(e.target.value)}
@@ -190,7 +196,7 @@ export default function Home() {
             <input
               type="text"
               value={keywords}
-              className="h-[48px] w-[250px] rounded-md border border-solid border-[#eaeaea] px-3 outline-none transition-colors focus:border-black focus:outline-1"
+              className="h-[48px] w-[250px] rounded-md border border-solid border-gray-300 px-3 outline-none transition-colors focus:border-black focus:outline-1"
               placeholder="Enter keywords"
               onChange={(e) => setKeywords(e.target.value)}
               spellCheck="false"
@@ -209,7 +215,7 @@ export default function Home() {
                       type="checkbox"
                       onChange={(e) => setExactWords(e.target.checked)}
                       id="exactWords"
-                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus-visible:outline-2 focus-visible:outline-gray-400"
+                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus-visible:outline-2 focus-visible:outline-black"
                     />
                     <span className="absolute flex items-center justify-center">
                       <Check width={14} height={14} color="white" />
@@ -228,7 +234,7 @@ export default function Home() {
                       onChange={(e) => setAllKeywords(e.target.checked)}
                       checked={allKeywords}
                       id="allKeywords"
-                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus-visible:outline-2 focus-visible:outline-gray-400"
+                      className="h-4 w-4 appearance-none rounded-sm border border-gray-300 bg-white outline-none transition-colors checked:border-black checked:bg-black focus-visible:outline-2 focus-visible:outline-black"
                     />
                     <span className="absolute flex items-center justify-center">
                       <Check width={14} height={14} color="white" />
@@ -266,7 +272,7 @@ export default function Home() {
               ) : null}
             </h2>
           </div>
-          <Table data={data} />
+          <Result data={data} />
           <Footer />
         </div>
       </main>
