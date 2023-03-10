@@ -24,6 +24,7 @@ export default function Home() {
       item.description,
       item.username,
       item.name,
+      item.location,
       item.entities?.url?.urls?.[0]?.expanded_url,
     ].filter(Boolean);
 
