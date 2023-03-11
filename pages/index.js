@@ -47,10 +47,10 @@ export default function Home() {
   const getID = async (user) => {
     const response = await fetch(`/api/getId?user=${user}`);
     const data = await response.json();
-    if (data.id.errors) {
+    if (data.errors) {
       return;
     } else {
-      return data.id.data.id;
+      return data.data.id;
     }
   };
 
@@ -101,7 +101,7 @@ export default function Home() {
     const response = await fetch(`/api/getData?id=${id}`);
     const data = await response.json();
 
-    if (id === undefined && data.data.status !== 429) {
+    if (id === undefined && data.status !== 429) {
       setFinished(true);
       setTitle("User not found");
       setDescription("Please enter a valid user.");
@@ -124,7 +124,7 @@ export default function Home() {
           setOpenToast(true);
         }, 350);
       }
-    } else if (data.data.status === 429) {
+    } else if (data.status === 429) {
       setFinished(true);
       setTitle("Rate Limited");
       setDescription("Please try again later.");
@@ -136,18 +136,18 @@ export default function Home() {
         }, 350);
       }
     } else {
-      while (data.data.meta.next_token) {
-        const response = await fetch(`/api/getData?id=${id}&token=${data.data.meta.next_token}`);
+      while (data.meta.next_token) {
+        const response = await fetch(`/api/getData?id=${id}&token=${data.meta.next_token}`);
         const data2 = await response.json();
-        data.data.meta.next_token = data2.data.meta.next_token;
-        data.data.data = data.data.data.concat(data2.data.data);
+        data.meta.next_token = data2.meta.next_token;
+        data.data = data.data.concat(data2.data);
       }
-      for (let i = 0; i < data.data.data.length; i++) {
+      for (let i = 0; i < data.data.length; i++) {
         const keywordMatch = allKeywords
-          ? newKeywords.every((keyword) => hasKeywords(data.data.data[i], keyword, exactWords))
-          : newKeywords.some((keyword) => hasKeywords(data.data.data[i], keyword, exactWords));
+          ? newKeywords.every((keyword) => hasKeywords(data.data[i], keyword, exactWords))
+          : newKeywords.some((keyword) => hasKeywords(data.data[i], keyword, exactWords));
         if ((!allKeywords && keywordMatch) || (allKeywords && keywordMatch)) {
-          newData.push(data.data.data[i]);
+          newData.push(data.data[i]);
         }
       }
       if (newData.length === 0) {

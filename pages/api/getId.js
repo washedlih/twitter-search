@@ -11,5 +11,5 @@ export default async function handler(req, res) {
     requestOptions,
   );
   const data = await response.json();
-  res.status(200).json({ id: data });
+  res.status(200).json(data);
 }
