@@ -14,7 +14,7 @@ const Result = ({ data }) => {
             target="_blank"
             rel="noopener noreferrer"
             key={item.id}
-            className="odd:rounded-lg odd:bg-white even:bg-slate-50 even:hover:rounded-lg"
+            className="odd:bg-white even:bg-slate-50 hover:rounded-lg"
           >
             <div className="flex gap-4 rounded-lg px-6 py-4 text-base text-gray-900 hover:bg-black/[.05] md:text-lg">
               {item.profile_image_url && (
