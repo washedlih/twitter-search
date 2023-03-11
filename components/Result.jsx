@@ -18,13 +18,15 @@ const Result = ({ data }) => {
           >
             <div className="flex gap-4 rounded-lg px-6 py-4 text-base text-gray-900 hover:bg-black/[.05] md:text-lg">
               {item.profile_image_url && (
-                <Image
-                  className="inline-block h-[90px] w-[90px] rounded-full shadow-md"
-                  src={item.profile_image_url.replace("_normal", "_400x400")}
-                  alt={item.username}
-                  width={90}
-                  height={90}
-                />
+                <div className="flex items-center justify-center">
+                  <Image
+                    className="inline-block h-[90px] w-[90px] rounded-full shadow-md"
+                    src={item.profile_image_url.replace("_normal", "_400x400")}
+                    alt={item.username}
+                    width={90}
+                    height={90}
+                  />
+                </div>
               )}
               <div className="flex max-w-[220px] flex-col items-start md:max-w-md">
                 <span className="flex flex-col gap-x-1 gap-y-0 md:flex-row">
