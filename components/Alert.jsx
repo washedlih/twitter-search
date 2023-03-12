@@ -12,13 +12,10 @@ const Alert = ({ open, setOpen, title, description }) => {
         onOpenChange={setOpen}
         className={cx(
           "group fixed inset-x-4 bottom-4 z-50 mx-auto max-w-[320px] rounded-lg bg-white shadow-lg lg:top-4 lg:right-4 lg:left-auto lg:bottom-auto lg:w-full",
-          "state-open:animate-toast-slide-in-bottom lg:state-open:animate-toast-slide-in-right",
+          "state-open:animate-toast-slide-in-right",
           "state-closed:animate-toast-hide",
           "swipe-direction-right:swipe-end:animate-toast-swipe-out-x",
           "swipe-direction-right:translate-x-toast-swipe-move-x",
-          "swipe-direction-down:swipe-end:animate-toast-swipe-out-y",
-          "swipe-direction-down:translate-y-toast-swipe-move-y",
-          "swipe-cancel:translate-x-0 swipe-cancel:duration-200 swipe-cancel:ease-[ease]",
         )}
       >
         <button
