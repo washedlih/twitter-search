@@ -56,6 +56,7 @@ export default function Home() {
 
   const getData = async (e) => {
     e.preventDefault();
+    setFinished(false);
     const newKeywords = [];
     const newData = [];
     inputRef.current.blur();
@@ -248,12 +249,10 @@ export default function Home() {
                 type="submit"
                 className={`flex h-[48px] ${
                   finished ? `w-[100px] justify-center` : `w-[130px] gap-1 px-2`
-                } group select-none items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black hover:focus:outline-none focus-visible:outline-2 focus-visible:outline-black`}
-                onClick={() => setFinished(false)}
+                } select-none items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition focus-visible:outline-2 focus-visible:outline-black`}
+                disabled={!finished}
               >
-                {finished ? null : (
-                  <Loader2 size={20} className="animate-spin group-hover:text-black" />
-                )}
+                {finished ? null : <Loader2 color="white" size={20} className="animate-spin" />}
                 {finished ? "Search" : "Searching..."}
               </button>
             </div>
