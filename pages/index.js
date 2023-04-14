@@ -31,7 +31,7 @@ export default function Home() {
     exactWords
       ? (fields = fields.map((field) => field.toLowerCase().split(" ")))
       : (fields = fields.map((field) => field.toLowerCase()));
-    return fields.some((field) => field.includes(keywords));
+    return fields.some((field) => field.includes(keywords.toLowerCase()));
   };
 
   const handleInput = (input) => {
@@ -90,7 +90,6 @@ export default function Home() {
     } else {
       newUser = handleInput(newUser);
       var id = await getID(newUser);
-      setUser(newUser);
     }
 
     let slicedKeywords = handleInput(keywords);
@@ -249,10 +248,14 @@ export default function Home() {
                 type="submit"
                 className={`flex h-[48px] ${
                   finished ? `w-[100px] justify-center` : `w-[130px] gap-1 px-2`
-                } select-none items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition focus-visible:outline-2 focus-visible:outline-black`}
+                } ${
+                  !finished && `cursor-not-allowed`
+                } group select-none items-center rounded-md border border-solid border-black bg-black px-3 text-white outline-none transition hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-black`}
                 disabled={!finished}
               >
-                {finished ? null : <Loader2 color="white" size={20} className="animate-spin" />}
+                {finished ? null : (
+                  <Loader2 size={20} className="animate-spin group-hover:text-black" />
+                )}
                 {finished ? "Search" : "Searching..."}
               </button>
             </div>
