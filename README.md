@@ -1,38 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![gif](https://storage.googleapis.com/gifbucket/twittersearch.gif)
 
-## Getting Started
+# Introduction
 
-First, run the development server:
+[Twitter Search](https://twittersearch.vercel.app/) is a web app that allows you to search who a user is following based on keywords in their bio, username, and location.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Enter a Twitter username and a keyword to search for. The app will return a list of users that match the keyword in their bio. You can also search by location if the user has a location set in their profile.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To use multiple keywords, separate them with a comma `keyword1, keyword2, keyword3`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+`Exact keywords` option will search for the exact keyword. For example, if you search for `developer` and `Exact keywords` is checked, the app will return users that have `developer` in their bio.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`All keywords` option will search for all keywords. For example, if you search for `developer, react` and `All keywords` is checked, the app will return users that have `developer` and `react` in their bio.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Purpose
 
-## Learn More
+It started when I was trying to find some inspiration from a developer I follow on Twitter. I wanted to see who they were following, but I couldn't find a way to do so. So I decided to build a web app that allows me to search who a user is following based on keywords in their bio, username, and location.
 
-To learn more about Next.js, take a look at the following resources:
+## Lessons Learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I learned how to use the Twitter API and Nextjs simple API routes. One of the challenges I faced was that the API only returns 1,000 users per request, this would cause the search to be invalid as some users follow more than 1,000 accounts. I was able to use the pagination token to get all the users and then filter them based on the keywords.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Vercel](https://vercel.com/)
