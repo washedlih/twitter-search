@@ -1,4 +1,4 @@
-![gif](https://storage.googleapis.com/gifbucket/twittersearch.gif)
+![image](/public/twittersearch.png)
 
 # Introduction
 
