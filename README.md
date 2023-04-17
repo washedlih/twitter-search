@@ -8,11 +8,11 @@
 
 Enter a Twitter username and a keyword to search for. The app will return a list of users that match the keyword in their bio. You can also search by location if the user has a location set in their profile.
 
-To use multiple keywords, separate them with a comma `keyword1, keyword2, keyword3`.
+To use multiple keywords, separate them with a comma: `keyword1,keyword2,keyword3`.
 
-`Exact keywords` option will search for the exact keyword. For example, if you search for `developer` and `Exact keywords` is checked, the app will return users that have `developer` in their bio.
+`Exact words` option will search for the exact keywords. For example, if you search for `developer` and `Exact words` is checked, the app will search for users that have the word `developer` in their bio.
 
-`All keywords` option will search for all keywords. For example, if you search for `developer, react` and `All keywords` is checked, the app will return users that have `developer` and `react` in their bio.
+`All keywords` option will search for all keywords. For example, if you search for `developer,react` and `All keywords` is checked, the app will search for users that have both `developer` and `react` in their bio.
 
 ## Purpose
 
