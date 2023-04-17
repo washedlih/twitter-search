@@ -1,6 +1,6 @@
 ![image](/public/twittersearch.png)
 
-# Introduction
+## Introduction
 
 [Twitter Search](https://twittersearch.vercel.app/) is a web app that allows you to search who a user is following based on keywords in their bio, username, and location.
 
