@@ -266,7 +266,7 @@ export default function Home() {
               {results ? (
                 <a
                   className="text-blue-600 opacity-70 hover:underline hover:decoration-blue-600/30 hover:underline-offset-2 hover:opacity-100"
-                  href={`https://twitter.com/${user}`}
+                  href={`https://twitter.com/${newUser}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
